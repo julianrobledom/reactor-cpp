@@ -77,7 +77,7 @@ private:
 public:
   explicit Environment(unsigned int num_workers, bool fast_fwd_execution = default_fast_fwd_execution,
                        const Duration& timeout = Duration::max());
-  explicit Environment(const std::string& name, Environment* containing_environment);
+  explicit Environment(unsigned int num_workers, const std::string& name, Environment* containing_environment);
 
   auto name() -> const std::string& { return name_; }
 

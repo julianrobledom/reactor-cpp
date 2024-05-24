@@ -32,10 +32,10 @@ Environment::Environment(unsigned int num_workers, bool fast_fwd_execution, cons
     , scheduler_(this)
     , timeout_(timeout) {}
 
-Environment::Environment(const std::string& name, Environment* containing_environment)
+Environment::Environment(unsigned int num_workers, const std::string& name, Environment* containing_environment)
     : name_(name)
     , log_("Environment " + name)
-    , num_workers_(containing_environment->num_workers_)
+    , num_workers_(num_workers)
     , fast_fwd_execution_(containing_environment->fast_fwd_execution_)
     , containing_environment_(containing_environment)
     , top_environment_(containing_environment_->top_environment_)
